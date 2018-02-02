@@ -12,5 +12,11 @@ namespace Architecture.Departments
         {
             var _policies = new Dictionary<string, string>();
         }
+
+        public override void Meet(string meetingPlace)
+        {
+            meetingPlace = "Detention";
+            Console.WriteLine($"We are in the {meetingPlace}");
+        }
     }
 }

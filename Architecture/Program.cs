@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Architecture.Employee;
+using Architecture.Departments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 
 
 namespace Architecture
@@ -12,31 +13,66 @@ namespace Architecture
     {
         static void Main(string[] args)
         {
-            HumanResources hr1 = new HumanResources ("White", "hr", "Mary Garland", 4);
-            HumanResources hr2 = new HumanResources("Asian", "hr", "Jason Hoster", 3);
-            HumanResources hr3 = new HumanResources("Black", "hr", "Hadleigh Tweedall", 5);
 
-            var hrList = new List<HumanResources>
+            HumanResources hrDept = new HumanResources ( "White", "hr", "Mary Garland", 4);
+
+            Sales SalesDept = new Sales("Sales", "Craig", 3);
+
+            var departments = new List<DepartmentBase>();
+
+           departments.Add(hrDept);
+            departments.Add(SalesDept);
+
+            //hrDept.Meet("meetingPlace");
+            //SalesDept.Meet("meetingPlace");
+
+
+            foreach (DepartmentBase dept in departments)
             {
-                hr1,
-                hr2,
-                hr3
+               
+                Console.WriteLine($"{ dept.toString()}");
+                dept.Meet("meetingPlace");
+            }
+
+           
+
+
+            hrDept.AddPolicy ("Harassment", "don't do it");
+            Console.ReadLine();
+
+
+            EngineerEmployee ee = new EngineerEmployee()
+            {
+                FirstName = "Caitlin",
+                LastName = "Murnick",
+                Salary = 100000
+
+
             };
 
-            foreach (var hrPerson in hrList)
+
+            AssemblyLine Aee = new AssemblyLine()
             {
-                Console.WriteLine(hrPerson.toString());
+                FirstName = "Pride",
+                LastName = "Scanlan",
+                Hourly = 15
+            };
 
-            }
-            Console.ReadLine();
-            
-
-
-
-            //HumanResources myHR = new HumanResources("HR", "Mary", 2, "White");
-            //Console.WriteLine($"my department, {myHR.name} " )
+            List<EngineerEmployee> elist = new List<EngineerEmployee>()
+            {
+                //Aee,
+                ee
+            };
+         
+            //foreach(var employee in elist)
+            //{
+            //    Console.WriteLine(employee.LastName);
+               
             //}
+            //Console.ReadLine();
 
+            
+           
         }
     }
 }

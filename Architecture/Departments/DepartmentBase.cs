@@ -23,5 +23,16 @@ namespace Architecture
             Supervisor = supervisor;
             Employees = employees;
         }
+
+        public string toString()
+        {
+            return $"{Name} {Supervisor} {Employees}";
+        }
+
+        public virtual void Meet(string meetingPlace)
+        {
+            meetingPlace = "toilet";
+        }
+       
     }
 }

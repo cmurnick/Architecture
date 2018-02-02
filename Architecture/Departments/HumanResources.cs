@@ -12,27 +12,33 @@ namespace Architecture
     {
         public string Race { get; set; }
         public string LanguageSpoken { get; set; }
+        public string Location { get; set; }
 
-        private Dictionary<string, string> _policies = new Dictionary<string, string>();
+        private Dictionary<string, string> Policies = new Dictionary<string, string>();
 
        public HumanResources(string race,string name, string supervisor, int employees) : base(name, supervisor, employees)
         {
             race = Race;
             toString();
         }
+
         public void AddPolicy(string title, string text)
         {
-            _policies.Add(title, text); 
+            Policies.Add(title, text);
 
-            foreach(KeyValuePair<string, string> policy in _policies)
+            foreach (KeyValuePair<string, string> policy in Policies)
             {
-                Console.WriteLine($"{policy.Value}");
+                Console.WriteLine($"{policy.Key} {policy.Value}");
             }
         }
 
-        public string toString()
+       
+
+        public override void Meet(string meetingPlace)
         {
-            return $"{Name} {Supervisor} {Employees}";
+           meetingPlace =  "Science Room";
+            Console.WriteLine($"We are in the {meetingPlace}");
+         
         }
     }
 }

@@ -46,6 +46,11 @@
     <Compile Include="Departments\HumanResources.cs" />
     <Compile Include="Departments\IT.cs" />
     <Compile Include="Departments\Sales.cs" />
+    <Compile Include="Employee\AssemblyLine.cs" />
+    <Compile Include="Employee\employee.cs" />
+    <Compile Include="Employee\EngineerEmployee.cs" />
+    <Compile Include="Employee\IFullTime.cs" />
+    <Compile Include="Employee\IPartTime.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
