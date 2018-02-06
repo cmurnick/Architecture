@@ -11,6 +11,11 @@ namespace Architecture
         public string Name { get; set; }
         public string Supervisor { get; set; }
         public int Employees { get; set; }
+        private string _employeeName;
+        public string EmployeeName
+        {
+            get; 
+        }
 
         // You can create properties, if needed
 
@@ -33,6 +38,16 @@ namespace Architecture
         {
             meetingPlace = "toilet";
         }
+
+        public virtual void SetBudget(double budget)
+        {
+           budget = 5.00;
+           var basebudget = budget;
+           
+            
+        }
+
+
        
     }
 }

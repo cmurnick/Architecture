@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Architecture.Employee
+namespace Architecture.Employees
 {
-    public class EngineerEmployee : employee, IFullTime
+    class Employees
     {
-        public decimal Salary { get; set; }
     }
 }

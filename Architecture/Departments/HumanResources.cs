@@ -8,18 +8,21 @@ using Architecture.Departments;
 
 namespace Architecture
 {
-    public class HumanResources : DepartmentBase
+    public class HumanResources : DepartmentBase, IKeyCard
     {
         public string Race { get; set; }
         public string LanguageSpoken { get; set; }
         public string Location { get; set; }
+        public bool NeedsKeyCard { get; set; }
 
         private Dictionary<string, string> Policies = new Dictionary<string, string>();
 
-       public HumanResources(string race,string name, string supervisor, int employees) : base(name, supervisor, employees)
+       public HumanResources(string race,string name, string supervisor, int employees, bool keycard) : base(name, supervisor, employees)
         {
             race = Race;
+            keycard = NeedsKeyCard;
             toString();
+            
         }
 
         public void AddPolicy(string title, string text)
@@ -39,6 +42,12 @@ namespace Architecture
            meetingPlace =  "Science Room";
             Console.WriteLine($"We are in the {meetingPlace}");
          
+        }
+
+        public override void SetBudget(double budget)
+        {
+            var amount = budget + 20000.00;
+            Console.WriteLine($"this department has {amount} to spend");
         }
     }
 }

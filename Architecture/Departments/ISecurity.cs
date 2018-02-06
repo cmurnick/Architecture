@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Architecture.Employee
+namespace Architecture.Departments
 {
-    public class AssemblyLine : employee, IPartTime
+    interface ISecurity
     {
-        public double Hourly { get; set; }
+        bool GoToSecurity
+        {
+            get; set;
+        }
+        
     }
 }

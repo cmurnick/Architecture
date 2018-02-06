@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Architecture.Employee
+namespace Architecture.Departments
 {
-    public interface IFullTime
+    public interface IKeyCard
     {
-        decimal Salary { get; set; }
+        bool NeedsKeyCard
+        { get; set; }
+        
     }
 }

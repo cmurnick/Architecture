@@ -1,4 +1,4 @@
-﻿using Architecture.Employee;
+﻿
 using Architecture.Departments;
 using System;
 using System.Collections.Generic;
@@ -14,62 +14,36 @@ namespace Architecture
         static void Main(string[] args)
         {
 
-            HumanResources hrDept = new HumanResources ( "White", "hr", "Mary Garland", 4);
+            HumanResources hrDept = new HumanResources ( "White", "hr", "Mary Garland", 4, true);
 
-            Sales SalesDept = new Sales("Sales", "Craig", 3);
+            Sales SalesDept = new Sales("Sales", "Craig", 3, true);
 
             var departments = new List<DepartmentBase>();
 
            departments.Add(hrDept);
             departments.Add(SalesDept);
 
-            //hrDept.Meet("meetingPlace");
-            //SalesDept.Meet("meetingPlace");
-
-
+            
             foreach (DepartmentBase dept in departments)
             {
                
                 Console.WriteLine($"{ dept.toString()}");
                 dept.Meet("meetingPlace");
+
+                double Basebudget = 500.00;
+                dept.SetBudget(Basebudget);
+                
+                
             }
-
-           
-
 
             hrDept.AddPolicy ("Harassment", "don't do it");
             Console.ReadLine();
 
-
-            EngineerEmployee ee = new EngineerEmployee()
-            {
-                FirstName = "Caitlin",
-                LastName = "Murnick",
-                Salary = 100000
-
-
-            };
-
-
-            AssemblyLine Aee = new AssemblyLine()
-            {
-                FirstName = "Pride",
-                LastName = "Scanlan",
-                Hourly = 15
-            };
-
-            List<EngineerEmployee> elist = new List<EngineerEmployee>()
-            {
-                //Aee,
-                ee
-            };
-         
-            //foreach(var employee in elist)
+            //var SalesTeammate = new List<EmployeeName>
             //{
-            //    Console.WriteLine(employee.LastName);
-               
+            //    new EmployeeName = "Jason Hoster"; 
+
             //}
-            //Console.ReadLine();
 
             
            
